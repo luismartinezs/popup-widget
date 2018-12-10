@@ -1,0 +1,72 @@
+:root {
+    --font-h: 'Nunito', serif;
+    --font-p: 'Raleway', sans-serif;
+    --primary: #0dad62;
+    --primary-light: #61c797;
+    --primary-xlight: #bdead5;
+    --primary-dark: #01582f;
+    --secondary: #ff4081;
+    --secondary-light: #ff79b0;
+    --secondary-xlight: #ffdae9;
+    --secondary-dark: #c60055;
+    --text-primary: #0e0e0e;
+    --text-secondary: #0e0e0e;
+    --almost-white: rgb(236, 231, 231);
+    --almost-black: rgb(22, 21, 21);
+    --alert: rgb(233, 218, 84);
+    --small-width: 540px;
+    --medium-width: 720px;
+    --large-width: 960px;
+    --soft-black: #5C5C5C;
+}
+
+.ReactModal__Body--open {
+    overflow: hidden;
+}
+
+.modal {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    background-color: var(--primary-xlight);
+    color: var(--almost-black);
+}
+
+.modalWrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.btnCloseModal {
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding-top: 0.1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--secondary);
+}
+
+.btnCloseModal:hover {
+    background-color: var(--secondary-dark);
+    color: var(--almost-white);
+}
+
+@media (min-width: 720px) {
+    .modal {
+        max-width: 720px;
+        margin: auto;
+    }
+}

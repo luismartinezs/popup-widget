@@ -28,10 +28,16 @@ STEP 1: Create static UI
 - Make img box be of fixed size: 150, 200
 - make each thumbnail be different
 - Add '+' btn to each img
-- make + btn open up a modal
 
 - hide item title and subtitle
 - on hover over img:
     - opacity mask
     - title and subtitle
     - + btn
+
+- make + btn open up a modal
+- modal fills most of the window up to a specific max height and width
+- there is a margin between the modal border and the window border
+- modal has 2 tabs:
+    - tab1: "item", has info title, description, director, producer, year, rating, large image, etc: same layout as I have in ghibli project
+    - tab2: has list of related items "you may also like"

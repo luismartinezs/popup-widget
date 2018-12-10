@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Widget from './widget/widget';
+import Modal from 'react-modal';
 import './page.css';
 
 class PageWrapper extends Component {
@@ -37,18 +39,38 @@ class Page extends Component {
 }
 
 class Item extends Component {
+    constructor() {
+        super();
+        this.state = {
+            showModal: false
+        };
+
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
+    }
+
+    handleOpenModal() {
+        this.setState({ showModal: true });
+    }
+
+    handleCloseModal() {
+        this.setState({ showModal: false });
+    }
+
     render() {
         return (
-            <div className='itemBox'>
-
-                <div className='thumbnailWrapper'>
-                    <div className='thumbnailMask'>
-                        <h2 className='itemTitle'>Title</h2>
-                        <p className='itemSubtitle'>Subtitle</p>
-                        <button className='btn btnCircle btnSeeMore'>+</button>
+            <div>
+                <div className='itemBox'>
+                    <div className='thumbnailWrapper'>
+                        <div className='thumbnailMask'>
+                            <h2 className='itemTitle'>Title</h2>
+                            <p className='itemSubtitle'>Subtitle</p>
+                            <button className='btn btnCircle btnSeeMore' onClick={this.handleOpenModal}>+</button>
+                        </div>
+                        <img src='https://picsum.photos/200/200/?random' />
                     </div>
-                    <img src='https://picsum.photos/200/200/?random' />
                 </div>
+                <Widget showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} />
             </div>
         );
     }
