@@ -1,0 +1,21 @@
+Description:
+- Basic product page
+    - Text / image description
+    - Button that opens a pop up (modal)
+- Modal widget:
+    - 2 tabs:
+        - Main product
+        - Product recommendations
+    - Sleek design
+
+- Create basic product page
+    - Heading
+    - Content section: list of items
+- imports data from API
+- Product page shows basic info on some items:
+    - Title
+    - Thumbnail (use this: https://picsum.photos/ or something similar)
+    - Button (+): on click, open modal
+- Modal shows two tabs
+- Tab1 shows additional item info
+- 

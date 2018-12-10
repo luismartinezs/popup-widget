@@ -1,0 +1,28 @@
+:root {
+    --font-h: 'Nunito', serif;
+    --font-p: 'Raleway', sans-serif;
+    --primary: #0dad62;
+    --primary-light: #61c797;
+    --primary-xlight: #bdead5;
+    --primary-dark: #01582f;
+    --secondary: #f55000;
+    --secondary-light: #ff9664;
+    --secondary-xlight: #ffdccb;
+    --secondary-dark: #7d2900;
+    --text-primary: #0e0e0e;
+    --text-secondary: #0e0e0e;
+    --alert: #E35C5C;
+    --small-width: 540px;
+    --medium-width: 720px;
+    --large-width: 960px;
+    --soft-black: #5C5C5C;
+}
+
+html {
+    background-color: var(--primary-xlight);
+    font-family: var(--font-p);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-h);
+}
