@@ -40,10 +40,14 @@ class Item extends Component {
     render() {
         return (
             <div className='itemBox'>
-                <h2 className='itemTitle'>Title</h2>
-                <p className='itemSubtitle'>Subtitle</p>
+
                 <div className='thumbnailWrapper'>
-                    <img src='https://picsum.photos/150/200/?random' />
+                    <div className='thumbnailMask'>
+                        <h2 className='itemTitle'>Title</h2>
+                        <p className='itemSubtitle'>Subtitle</p>
+                        <button className='btn btnCircle btnSeeMore'>+</button>
+                    </div>
+                    <img src='https://picsum.photos/200/200/?random' />
                 </div>
             </div>
         );
