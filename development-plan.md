@@ -25,3 +25,13 @@ STEP 1: Create static UI
 - Create single item view in page: title, img, button
     - all images have same size (use fixed size div and background-size: canvas)
 - Create HOC that shows gallery of n items
+- Make img box be of fixed size: 150, 200
+- make each thumbnail be different
+- Add '+' btn to each img
+- make + btn open up a modal
+
+- hide item title and subtitle
+- on hover over img:
+    - opacity mask
+    - title and subtitle
+    - + btn

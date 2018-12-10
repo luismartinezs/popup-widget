@@ -23,8 +23,66 @@
 html {
     background-color: var(--primary-xlight);
     font-family: var(--font-p);
+    color: var(--almost-black);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-h);
+}
+
+.mdText {
+    font-size: 1rem;
+}
+
+.smText {
+    font-size: 0.9rem;
+}
+
+.wrapper {
+    margin: 1rem;
+    text-align: center;
+}
+
+.headContainer {
+    border-bottom: 1px solid var(--soft-black);
+    margin-bottom: 2rem;
+}
+
+.itemListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemBox {
+    margin: 0.3rem 0.3rem 3rem 0.3rem;
+}
+
+.itemTitle {
+    font-size: 1.1rem;
+    margin: 0 0 0.3rem 0;
+}
+
+.itemSubtitle {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.8rem;
+}
+
+.thumbnailWrapper {
+    width: 150px;
+    height: 200px;
+}
+
+@media (min-width: 540px) {
+    .wrapper {
+        margin: 2rem;
+    }
+}
+
+@media (min-width: 720px) {
+    .wrapper {
+        max-width: 720px;
+        margin: auto;
+    }
 }
