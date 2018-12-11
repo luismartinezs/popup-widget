@@ -42,5 +42,9 @@ STEP 1: Create static UI
     - tab1: "item", has info title, description, director, producer, year, rating, large image, etc: same layout as I have in ghibli project
     - tab2: has list of related items "you may also like"
 
+- API gets called and passed data to each item
+- Modal shows data relative to image that was clicked, and shows the same image
+- Explore shows some random
+
 Maybe:
 - When click "love" button, heart pieces come out and vanish

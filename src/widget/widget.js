@@ -26,6 +26,7 @@ class Widget extends Component {
     }
 
     render() {
+
         const [tab1Style, tab2Style] = this.state.showTab === 1 ?
             ['tabBtn activeTab', 'tabBtn lastTabBtn'] :
             ['tabBtn', 'tabBtn lastTabBtn activeTab'];
@@ -45,7 +46,7 @@ class Widget extends Component {
                 </div>
                 <div className='contentWrapper w-100'>
                     <div className='contentContainer'>
-                        {this.state.showTab === 1 ? <Detail /> : <Explore />}
+                        {this.state.showTab === 1 ? <Detail item={this.props.item} /> : <Explore />}
                     </div>
                 </div>
             </Modal>

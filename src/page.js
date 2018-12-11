@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Widget from './widget/widget';
-import Modal from 'react-modal';
+import { asyncCall } from './asyncCall';
+import { makeData } from './model/data';
 import './page.css';
 
 class PageWrapper extends Component {
+
     render() {
         return (
             <div className='wrapper'>
@@ -14,27 +16,63 @@ class PageWrapper extends Component {
 }
 
 class Page extends Component {
-    render() {
-        let itemList = [];
-
-        for (let i = 0; i < 12; i++) {
-            itemList.push((<Item img={Math.floor(Math.random()*500)}/>));
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoading: true,
+            isError: false,
         }
+    }
 
-        console.log(itemList);
+    componentDidMount() {
+        let dataArr;
+        let url = 'https://ghibliapi.herokuapp.com/films';
 
-        return (
-            <PageWrapper>
-                <div className='headContainer'>
-                    <h1>Product page</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                    <p className='smText'>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </div>
-                <div className='itemListContainer'>
-                    {itemList}
-                </div>
-            </PageWrapper>
-        );
+        asyncCall(url)
+            .then((response) => {
+                dataArr = makeData(response);
+                console.log(dataArr[0]);
+                this.setState({
+                    data: dataArr,
+                    isLoading: false,
+                })
+            })
+            .catch(() => {
+                this.setState({
+                    isLoading: false,
+                    isError: true,
+                });
+            });
+
+    }
+
+    render() {
+
+        if (this.state.isLoading) return (<p>Loading...</p>);
+
+        if (this.state.isError) return (<p>There was some error while loading the data! Try again later...</p>);
+
+        if (!this.state.isLoading) {
+
+            let itemList = [];
+
+            for (let i = 0; i < 12; i++) {
+                itemList.push((<Item item={this.state.data[i]} />));
+            }
+
+            return (
+                <PageWrapper>
+                    <div className='headContainer'>
+                        <h1>Product page</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        <p className='smText'>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                    <div className='itemListContainer'>
+                        {itemList}
+                    </div>
+                </PageWrapper>
+            );
+        }
     }
 }
 
@@ -58,19 +96,22 @@ class Item extends Component {
     }
 
     render() {
+        console.log('item props:',this.props);
+        const { title, imgIndex } = this.props.item;
+
         return (
             <div>
                 <div className='itemBox'>
                     <div className='thumbnailWrapper'>
                         <div className='thumbnailMask'>
-                            <h2 className='itemTitle'>Title</h2>
-                            <p className='itemSubtitle'>Subtitle</p>
+                            <h2 className='itemTitle'>{title}</h2>
+                            {/* <p className='itemSubtitle'>Subtitle</p> */}
                             <button className='btn btnCircle btnSeeMore' onClick={this.handleOpenModal}>+</button>
                         </div>
-                        <img src={`https://picsum.photos/200/200/?image=${this.props.img}`} />
+                        <img src={`https://picsum.photos/200/200/?image=${imgIndex}`} />
                     </div>
                 </div>
-                <Widget showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} />
+                <Widget item={this.props.item} showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} />
             </div>
         );
     }
