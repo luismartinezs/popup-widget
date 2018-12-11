@@ -44,7 +44,6 @@ STEP 1: Create static UI
 
 - API gets called and passed data to each item
 - Modal shows data relative to image that was clicked, and shows the same image
-- Explore shows some random
 
 Maybe:
 - When click "love" button, heart pieces come out and vanish

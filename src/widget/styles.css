@@ -105,6 +105,10 @@
     margin: 0;
 }
 
+#detailImgWrapper img {
+    max-width: 100%;
+}
+
 #detailTxtContent {
     width: 85%;
 }
@@ -118,18 +122,8 @@
     color: rgb(134, 134, 134);
 }
 
-#priceWrapper {
-    margin-bottom: 1rem;
-}
-
-#price {
-    font-family: var(--font-h);
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
 .loveBtn {
-    font-size: 1.5rem;
+    font-size: 1.5rem!important;
     border-radius: 3px;
     text-transform: uppercase;
     background-color: var(--secondary);
