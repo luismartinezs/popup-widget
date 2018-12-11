@@ -18,7 +18,7 @@ function makeData(arr) {
 
     for (let i = 0; i < arr.length; i++) {
         dataArr.push(
-            new Item(arr[i].title, arr[i].description, arr[i].director, arr[i].producer, arr[i].release_date, arr[i].rt_score, Math.floor(Math.random() * 500))
+            new Item(arr[i].title, arr[i].description, arr[i].director, arr[i].producer, arr[i].release_date, arr[i].rt_score, Math.floor(Math.random() * 50))
         );
     }
 

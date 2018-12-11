@@ -56,8 +56,8 @@ class Page extends Component {
             let itemList = [];
 
             for (let i = 0; i < 12; i++) {
-                let otherItems = this.state.data.slice(0,i).concat(this.state.data.slice(i+1));
-                itemList.push((<Item key={i} item={this.state.data[i]} otherItems={otherItems}/>));
+                let otherItems = this.state.data.slice(0, i).concat(this.state.data.slice(i + 1));
+                itemList.push((<Item key={i} item={this.state.data[i]} otherItems={otherItems} />));
             }
 
             return (
@@ -106,7 +106,7 @@ class Item extends Component {
                             <h2 className='itemTitle'>{title}</h2>
                             <button className='btn btnCircle btnSeeMore' onClick={this.handleOpenModal}>+</button>
                         </div>
-                        <img src={`https://picsum.photos/200/200/?image=${imgIndex}`} alt={title}/>
+                        <img src={`https://picsum.photos/200/200/?image=${imgIndex}`} alt={title} />
                     </div>
                 </div>
                 <Widget item={this.props.item} otherItems={this.props.otherItems} showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} />

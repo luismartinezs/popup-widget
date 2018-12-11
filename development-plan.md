@@ -48,3 +48,5 @@ STEP 1: Create static UI
 
 Maybe:
 - When click "love" button, heart pieces come out and vanish
+- Sometimes the picsum API returns error, handle it >> decreased max image index
+- Given an ID, the image returned by picsum API is different for different image sizes
