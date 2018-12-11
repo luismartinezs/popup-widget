@@ -18,7 +18,7 @@ class Page extends Component {
         let itemList = [];
 
         for (let i = 0; i < 12; i++) {
-            itemList.push((<Item />));
+            itemList.push((<Item img={Math.floor(Math.random()*500)}/>));
         }
 
         console.log(itemList);
@@ -67,7 +67,7 @@ class Item extends Component {
                             <p className='itemSubtitle'>Subtitle</p>
                             <button className='btn btnCircle btnSeeMore' onClick={this.handleOpenModal}>+</button>
                         </div>
-                        <img src='https://picsum.photos/200/200/?random' />
+                        <img src={`https://picsum.photos/200/200/?image=${this.props.img}`} />
                     </div>
                 </div>
                 <Widget showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} />

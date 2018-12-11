@@ -1,0 +1,163 @@
+:root {
+    --font-h: 'Nunito', serif;
+    --font-p: 'Raleway', sans-serif;
+    --primary: #0dad62;
+    --primary-light: #61c797;
+    --primary-xlight: #bdead5;
+    --primary-dark: #01582f;
+    --secondary: #ff4081;
+    --secondary-light: #ff79b0;
+    --secondary-xlight: #ffdae9;
+    --secondary-dark: #c60055;
+    --text-primary: #0e0e0e;
+    --text-secondary: #0e0e0e;
+    --almost-white: rgb(236, 231, 231);
+    --almost-black: rgb(22, 21, 21);
+    --alert: rgb(233, 218, 84);
+    --small-width: 540px;
+    --medium-width: 720px;
+    --large-width: 960px;
+    --soft-black: #5C5C5C;
+}
+
+/* MODAL STYLES */
+
+.ReactModal__Body--open {
+    overflow: hidden;
+}
+
+.modal {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border: none;
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    overflow-x: hidden;
+    border-radius: 4px;
+    outline: none;
+    background-color: transparent;
+    color: var(--almost-black);
+}
+
+.btnCloseModal {
+    border: none;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-top: 0.2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    visibility:visible;
+}
+
+.btnCloseModal:hover {
+    background-color: var(--secondary-dark);
+    color: var(--almost-white);
+}
+
+.tabContainer {
+    height: 3rem;
+    background-color: transparent;
+}
+
+.tabBtn {
+    height: 100%;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: var(--primary-light);
+}
+
+.activeTab {
+    background-color: var(--primary-xlight);
+}
+
+.tabBtn:focus {
+    outline: none;
+}
+
+.lastTabBtn {
+    border-radius: 0 4px 0 0;
+}
+
+.contentWrapper {
+    background-color: var(--primary-xlight);
+    height: auto;
+}
+
+.contentContainer {
+    padding: 2rem;
+}
+
+@media (min-width: 720px) {
+    .modal {
+        max-width: 720px;
+        margin: auto;
+    }
+}
+
+/* DETAIL STYLES */
+
+#detailContainer {
+    margin: 0;
+}
+
+#detailTxtContent {
+    width: 85%;
+}
+
+#detailTxtExtra {
+    line-height: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.key {
+    color: rgb(134, 134, 134);
+}
+
+#priceWrapper {
+    margin-bottom: 1rem;
+}
+
+#price {
+    font-family: var(--font-h);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.loveBtn {
+    font-size: 1.5rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    background-color: var(--secondary);
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+}
+
+.loveBtn:hover {
+    background-color: var(--secondary-dark);
+}
+
+@media screen and (min-width: 960px) {
+    #detailContainer {
+        flex-direction: row;
+        align-items: flex-start;
+        margin: 0;
+    }
+
+    #detailTxtContent {
+        margin-right: 2rem;
+    }
+
+    #detailImgWrapper {
+        margin-right: 1rem;
+    }
+}

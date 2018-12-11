@@ -41,3 +41,6 @@ STEP 1: Create static UI
 - modal has 2 tabs:
     - tab1: "item", has info title, description, director, producer, year, rating, large image, etc: same layout as I have in ghibli project
     - tab2: has list of related items "you may also like"
+
+Maybe:
+- When click "love" button, heart pieces come out and vanish
