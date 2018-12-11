@@ -1,0 +1,13 @@
+{
+  "main.css": "/popup-widget/static/css/main.7ea905a9.chunk.css",
+  "main.js": "/popup-widget/static/js/main.85ac0779.chunk.js",
+  "main.js.map": "/popup-widget/static/js/main.85ac0779.chunk.js.map",
+  "static/js/1.3c31651c.chunk.js": "/popup-widget/static/js/1.3c31651c.chunk.js",
+  "static/js/1.3c31651c.chunk.js.map": "/popup-widget/static/js/1.3c31651c.chunk.js.map",
+  "runtime~main.js": "/popup-widget/static/js/runtime~main.32b4cd66.js",
+  "runtime~main.js.map": "/popup-widget/static/js/runtime~main.32b4cd66.js.map",
+  "static/css/main.7ea905a9.chunk.css.map": "/popup-widget/static/css/main.7ea905a9.chunk.css.map",
+  "index.html": "/popup-widget/index.html",
+  "precache-manifest.7a21169b5d63fce36e240e384042f405.js": "/popup-widget/precache-manifest.7a21169b5d63fce36e240e384042f405.js",
+  "service-worker.js": "/popup-widget/service-worker.js"
+}
