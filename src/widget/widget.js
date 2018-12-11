@@ -46,7 +46,7 @@ class Widget extends Component {
                 </div>
                 <div className='contentWrapper w-100'>
                     <div className='contentContainer'>
-                        {this.state.showTab === 1 ? <Detail item={this.props.item} /> : <Explore />}
+                        {this.state.showTab === 1 ? <Detail item={this.props.item} /> : <Explore otherItems={this.props.otherItems} />}
                     </div>
                 </div>
             </Modal>

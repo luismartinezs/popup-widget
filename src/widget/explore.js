@@ -5,7 +5,7 @@ class Explore extends Component {
         return(
             <div>
                 <h2>You may also like</h2>
-                <ItemList />
+                <ItemList otherItems={this.props.otherItems}/>
             </div>
         );
     }
@@ -16,7 +16,7 @@ class ItemList extends Component {
 
         let itemList = [];
         for (let i = 0; i < 6; i++) {
-            itemList.push((<Item img={Math.floor(Math.random()*500)}/>));
+            itemList.push((<Item key={i} item={this.props.otherItems[i]}/>));
         }
 
         return(
@@ -30,16 +30,16 @@ class ItemList extends Component {
 class Item extends Component {
 
     render() {
+        const {title, imgIndex} = this.props.item;
+
         return (
             <div>
                 <div className='itemBox'>
                     <div className='thumbnailWrapper'>
                         <div className='thumbnailMask'>
-                            <h2 className='itemTitle'>Title</h2>
-                            <p className='itemSubtitle'>Subtitle</p>
-                            {/* <button className='btn btnCircle btnSeeMore'>+</button> */}
+                            <h2 className='itemTitle'>{title}</h2>
                         </div>
-                        <img src={`https://picsum.photos/200/200/?image=${this.props.img}`} />
+                        <img src={`https://picsum.photos/200/200/?image=${imgIndex}`} alt={title}/>
                     </div>
                 </div>
             </div>

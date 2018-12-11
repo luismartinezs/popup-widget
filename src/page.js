@@ -31,7 +31,6 @@ class Page extends Component {
         asyncCall(url)
             .then((response) => {
                 dataArr = makeData(response);
-                console.log(dataArr[0]);
                 this.setState({
                     data: dataArr,
                     isLoading: false,
@@ -57,7 +56,8 @@ class Page extends Component {
             let itemList = [];
 
             for (let i = 0; i < 12; i++) {
-                itemList.push((<Item item={this.state.data[i]} />));
+                let otherItems = this.state.data.slice(0,i).concat(this.state.data.slice(i+1));
+                itemList.push((<Item key={i} item={this.state.data[i]} otherItems={otherItems}/>));
             }
 
             return (
@@ -96,7 +96,6 @@ class Item extends Component {
     }
 
     render() {
-        console.log('item props:',this.props);
         const { title, imgIndex } = this.props.item;
 
         return (
@@ -105,13 +104,12 @@ class Item extends Component {
                     <div className='thumbnailWrapper'>
                         <div className='thumbnailMask'>
                             <h2 className='itemTitle'>{title}</h2>
-                            {/* <p className='itemSubtitle'>Subtitle</p> */}
                             <button className='btn btnCircle btnSeeMore' onClick={this.handleOpenModal}>+</button>
                         </div>
-                        <img src={`https://picsum.photos/200/200/?image=${imgIndex}`} />
+                        <img src={`https://picsum.photos/200/200/?image=${imgIndex}`} alt={title}/>
                     </div>
                 </div>
-                <Widget item={this.props.item} showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} />
+                <Widget item={this.props.item} otherItems={this.props.otherItems} showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} />
             </div>
         );
     }
