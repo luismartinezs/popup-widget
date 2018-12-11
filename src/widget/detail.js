@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
-library.add(faHeart) // adds an icon to lib
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+library.add(faHeart); // adds an icon to lib
 
 class Detail extends Component {
     render() {
@@ -75,9 +75,9 @@ class DetailArea extends Component {
                         <button className='btn loveBtn' onClick={this.showLove}>
                             Love
                         </button>
-                        < FontAwesomeIcon onAnimationEnd={this.loveShown} ref='heart' className='heart heart1' style={loveAnimation ? {animationName: 'showLove'} : ''} icon={faHeart} />
-                        < FontAwesomeIcon ref='heart' className='heart heart2' style={loveAnimation ? {animationName: 'showLove'} : ''} icon={faHeart} />
-                        < FontAwesomeIcon ref='heart' className='heart heart3' style={loveAnimation ? {animationName: 'showLove'} : ''} icon={faHeart} />
+                        < FontAwesomeIcon onAnimationEnd={this.loveShown} className='heart heart1' style={loveAnimation ? {animationName: 'showLove'} : ''} icon={faHeart} />
+                        < FontAwesomeIcon className='heart heart2' style={loveAnimation ? {animationName: 'showLove'} : ''} icon={faHeart} />
+                        < FontAwesomeIcon className='heart heart3' style={loveAnimation ? {animationName: 'showLove'} : ''} icon={faHeart} />
                     </div>
                 </div>
             </div>

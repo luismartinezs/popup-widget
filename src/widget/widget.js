@@ -4,10 +4,10 @@ import Detail from './detail';
 import Explore from './explore';
 import './helper.css';
 import './styles.css';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
-library.add(faTimes) // adds an icon to lib
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+library.add(faTimes); // adds an icon to lib
 
 
 class Widget extends Component {
@@ -22,7 +22,7 @@ class Widget extends Component {
     setActiveTab(index) {
         this.setState({
             showTab: index,
-        })
+        });
     }
 
     render() {
