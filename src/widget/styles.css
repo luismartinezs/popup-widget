@@ -122,7 +122,13 @@
     color: rgb(134, 134, 134);
 }
 
+/* .loveBtnWrapper {
+    width: auto;
+    height: auto;
+} */
+
 .loveBtn {
+    z-index: 1!important;
     font-size: 1.5rem!important;
     border-radius: 3px;
     text-transform: uppercase;
@@ -130,10 +136,57 @@
     color: white;
     cursor: pointer;
     padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+    position: relative;
 }
 
 .loveBtn:hover {
     background-color: var(--secondary-dark);
+}
+
+.loveBtn:focus {
+    outline: none;
+}
+
+.heart{
+    position: relative;
+    color: var(--secondary);
+    /* animation-name: showLove; */
+    animation-duration: 0.8s;
+}
+
+.heart1 {
+    font-size: 2rem;
+    left: -5.5rem;
+    top: 0.1rem;
+    transition: all 0.5s;
+}
+
+.heart2 {
+    font-size: 2.5rem;
+    left: -4.6rem;
+    top: 0.5rem;
+    transition: all 0.5s;
+}
+
+.heart3 {
+    font-size: 1.7rem;
+    left: -8rem;
+    top: 0rem;
+    transition: all 0.5s;
+    
+}
+
+@keyframes showLove {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.0;
+        top: -3rem;
+    }
 }
 
 @media screen and (min-width: 960px) {

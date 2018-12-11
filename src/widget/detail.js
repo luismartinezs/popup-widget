@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+library.add(faHeart) // adds an icon to lib
 
 class Detail extends Component {
     render() {
-        const {imgIndex} = this.props.item;
+        const { imgIndex } = this.props.item;
 
         return (
             <div id='detailWrapper w-100'>
@@ -12,8 +16,8 @@ class Detail extends Component {
                         <img src={`https://picsum.photos/400/400?${imgIndex}`} alt='alt text' />
                     </div>
 
-                    <DetailArea item={this.props.item}/>
-                    
+                    <DetailArea item={this.props.item} />
+
                 </div>
             </div>
         );
@@ -21,8 +25,30 @@ class Detail extends Component {
 }
 
 class DetailArea extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loveAnimation: false,
+        };
+        this.showLove = this.showLove.bind(this);
+        this.loveShown = this.loveShown.bind(this);
+    }
+
+    loveShown() {
+        this.setState({
+            loveAnimation: false,
+        });
+    }
+
+    showLove() {
+        this.setState({
+            loveAnimation: true,
+        });
+    }
+
     render() {
-        const { title, director, description, producer, release_date, rt_score} = this.props.item;
+        const { title, director, description, producer, release_date, rt_score } = this.props.item;
+        const loveAnimation = this.state.loveAnimation;
 
         return (
             <div id='detailTxtContent'>
@@ -45,7 +71,14 @@ class DetailArea extends Component {
                     </div>
                 </div>
                 <div>
-                    <button className='btn loveBtn'>Love</button>
+                    <div className='loveBtnWrapper'>
+                        <button className='btn loveBtn' onClick={this.showLove}>
+                            Love
+                        </button>
+                        < FontAwesomeIcon onAnimationEnd={this.loveShown} ref='heart' className='heart heart1' style={loveAnimation ? {animationName: 'showLove'} : ''} icon={faHeart} />
+                        < FontAwesomeIcon ref='heart' className='heart heart2' style={loveAnimation ? {animationName: 'showLove'} : ''} icon={faHeart} />
+                        < FontAwesomeIcon ref='heart' className='heart heart3' style={loveAnimation ? {animationName: 'showLove'} : ''} icon={faHeart} />
+                    </div>
                 </div>
             </div>
         );
